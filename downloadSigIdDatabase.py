@@ -3,7 +3,6 @@
 #
 # Daniela Bozanic 27/02/22
 
-
 import requests, os, bs4
 
 url = 'https://www.sigidwiki.com/wiki/Database'
