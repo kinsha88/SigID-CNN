@@ -1,6 +1,6 @@
 ### Aim:
 
-To create a program that will receive a waterfall image as an input and be able to accurately predict the signal type by using a Convolutional Neural Network.
+To create a program that will receive a waterfall image as an input and be able to predict the signal type by using a Convolutional Neural Network to a good accuracy (>70-80%).
 
 Other possible features will be to allow inputs such as the bandwidth or centre frequency of the signal to help increase prediction accuracy.
 
