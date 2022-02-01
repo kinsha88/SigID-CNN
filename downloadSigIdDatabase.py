@@ -1,9 +1,8 @@
 #! Download every sigid image and put it in a class folder for CNN training data
 # Images taken from website https://www.sigidwiki.com/wiki/Database
 #
-# Daniela Bozanic 27/02/22
+# Created by kinsha88
 
-from bs4 import BeautifulSoup
 import requests, os, bs4
 
 url = 'https://www.sigidwiki.com/wiki/Database'
@@ -28,20 +27,6 @@ else:
         if row.select('td')[0].get('bgcolor') == '#FFDADA': 
             continue # skip rows for discontinued signals
         else:
-            #try:
-                # Get row name
-                # waterfallName = row.select('td')[0].get_text()
-                # print('Got row name %s...' % (waterfallName))
-                # # Download image
-                # waterfallUrl = 'https://www.sigidwiki.com' + row.select('img')[0].get('src')
-                # print('Downloading image %s...' % (waterfallUrl))
-                # res = requests.get(waterfallUrl)
-                # res.raise_for_status()
-            # except requests.exceptions.MissingSchema:
-            #     # skip this image
-            #     print('Skipping an image...')
-            #     continue #check
-            
             # Go into signal article and scrape more images
             try:
                 # Get row name
