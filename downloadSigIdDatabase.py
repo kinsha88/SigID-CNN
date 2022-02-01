@@ -3,7 +3,9 @@
 #
 # Created by kinsha88
 
-import requests, os, bs4
+from cmath import pi
+from fileinput import filename
+import requests, os, bs4, re
 
 url = 'https://www.sigidwiki.com/wiki/Database'
 os.makedirs('sigidScrape', exist_ok=True)
@@ -53,10 +55,9 @@ else:
                         res3 = requests.get(imageURL)
                         res3.raise_for_status()
 
-                        # Remove '150px-' at start of some file names
+                        # Remove '/d/d/d px-' included in some filenames
                         fileName = os.path.basename(imageURL)
-                        if fileName[0:6] == '150px-':
-                            fileName = fileName[6:]
+                        fileName = re.sub(r'\d\d\d-px','',filename)
                         
                         # Save and close file
                         imgpath = 'sigidScrape' + r'/' + waterfallName
